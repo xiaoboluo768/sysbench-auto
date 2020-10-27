@@ -76,6 +76,10 @@ if [ ! -e run ]; then mkdir run; fi
 
 prep_mysql_cnf ${mysql_template_cnf} ${mysql_cnf}
 mysql_cnf=`pwd`/${mysql_cnf}
+useradd mysql 2> /dev/null                                                                                                                                                  
+chown mysql.mysql ${mysql_datadir} -R                                                                                                                                       
+chown mysql.mysql ${mysql_datadir}_tmp -R                                                                                                                                   
+chown mysql.mysql ${mysql_basedir} -R  
 
 pushd ${mysql_basedir}
 ${mysql_init_db} \

@@ -5,7 +5,7 @@ if [ "${cfg_file}" = "" ]; then echo -e "Usage:\n\t./start.sh cfg_file"; exit 1;
 if [ ! -e ${cfg_file} ]; then echo "can't find configuration file [${cfg_file}]", exit 2; fi
 source ${cfg_file}
 
-${mysql_basedir}/bin/mysqld --defaults-file=${mysql_cnf} &
+${mysql_basedir}/bin/mysqld --defaults-file=${mysql_cnf} --user=mysql &
 mysql_pid=$!
 timed_out=1
 

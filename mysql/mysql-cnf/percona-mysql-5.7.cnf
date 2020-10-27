@@ -35,3 +35,4 @@ innodb_doublewrite=%mysql_doublewrite%
 
 max_connections=65536
 max_prepared_stmt_count=1048576
+user=mysql
