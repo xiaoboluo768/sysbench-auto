@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export dev_name=sfdv0n1
-export capacity_gb=8000
+export capacity_gb=9000
 export prep_dev=yes     # yes|no
 export init_db=yes      # yes|no
 export atomic_write=1   # 0|1
