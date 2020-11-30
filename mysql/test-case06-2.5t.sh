@@ -46,5 +46,5 @@ tar xzf compress.tgz
 popd
 
 export cfg_list=${WORKLOADS}
-export chart_title="percona-server-5.7.29-5t-awon"
+export chart_title="percona-server-5.7.29-2.5t-awon"
 ${run_cmd_script}
