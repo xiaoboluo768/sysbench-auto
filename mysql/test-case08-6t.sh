@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export dev_name=sfdv0n1
-export capacity_gb=9000
+export capacity_gb=16000
 export prep_dev=yes     # yes|no
 export init_db=yes      # yes|no
 export atomic_write=1   # 0|1
@@ -10,9 +10,9 @@ export WORKLOADS=sb/percona-mysql-5.7
 ## test configuraion for quick verification
 export workload_set="prepare oltp_read_only oltp_read_write oltp_write_only oltp_update_index oltp_update_non_index"
 export run_time=600      # in seconds
-export thread_count_list="1 16 32 64 128 256"
-export table_count=1400
-export table_size=20000000
+export thread_count_list="1 8 16 32 64 128"
+export table_count=300
+export table_size=114000000
 
 
 ## 600 table x 15 million records for 2T data set
@@ -46,5 +46,5 @@ tar xzf compress.tgz
 popd
 
 export cfg_list=${WORKLOADS}
-export chart_title="percona-server-5.7.29-5t-awon"
+export chart_title="percona-server-5.7.29-6t-awon"
 ${run_cmd_script}
