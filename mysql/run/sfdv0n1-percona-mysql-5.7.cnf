@@ -1,0 +1,38 @@
+[mysqld]
+socket                          =/opt/app/percona-server-5.7.28/mysqld.sock
+pid-file                        =/opt/app/percona-server-5.7.28/mysqld.pid
+basedir                         =/opt/app/percona-server-5.7.28
+log-error                       =/opt/app/percona-server-5.7.28/logs/error.log
+datadir                         =/data/sfdv0n1/percona-server-5.7.28
+tmpdir                          =/data/sfdv0n1/percona-server-5.7.28_tmp
+
+log_timestamps=SYSTEM
+explicit_defaults_for_timestamp=1
+
+innodb_page_size=16384
+innodb_buffer_pool_size =32G
+innodb_buffer_pool_instances=8
+innodb_page_cleaners=8
+innodb_log_group_home_dir=/data/sfdv0n1/percona-server-5.7.28
+innodb_log_file_size =8G
+innodb_log_buffer_size = 128M
+innodb_flush_log_at_trx_commit=1
+innodb_thread_concurrency=0
+innodb_open_files=100000
+innodb_file_per_table=1
+innodb_flush_method=O_DIRECT
+innodb_change_buffering=all
+innodb_adaptive_flushing=1
+innodb_old_blocks_time=1000
+innodb_use_native_aio=1
+innodb_lock_wait_timeout=120
+lock_wait_timeout=60
+innodb_io_capacity_max = 100000
+innodb_flush_neighbors = 0
+innodb_log_write_ahead_size=8192
+
+innodb_doublewrite=0
+
+max_connections=65536
+max_prepared_stmt_count=1048576
+user=mysql

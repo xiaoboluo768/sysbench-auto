@@ -5,14 +5,15 @@ export capacity_gb=3200
 export prep_dev=yes     # yes|no
 export init_db=yes      # yes|no
 export atomic_write=1   # 0|1
-export WORKLOADS=sb/percona-mysql-5.7
+export WORKLOADS=sb/mysql-5.7
 ############################################################
 ## test configuraion for quick verification
 export workload_set="prepare oltp_read_only oltp_read_write oltp_write_only oltp_update_index oltp_update_non_index"
-export run_time=10      # in seconds
-export thread_count_list="1 16 32 64 128 256"
-export table_count=8
-export table_size=20000
+export run_time=600      # in seconds
+export thread_count_list="1 8 16 32 64 128"
+export table_count=560
+export table_size=20000000
+
 
 ## 600 table x 15 million records for 2T data set
 # export workload_set="prepare oltp_read_only oltp_insert oltp_update_index oltp_update_non_index oltp_read_write oltp_write_only"
@@ -45,5 +46,5 @@ tar xzf compress.tgz
 popd
 
 export cfg_list=${WORKLOADS}
-export chart_title="percona-server-5.7.28-1t-awon"
+export chart_title="mysql-5.7.33-2t-awon"
 ${run_cmd_script}
